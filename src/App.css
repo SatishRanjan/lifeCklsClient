@@ -1,0 +1,14 @@
+.center-text {
+  text-align: center;
+  margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.logo {
+  width: 100px; /* adjust the width as needed */
+  height: auto; /* maintain aspect ratio */
+  margin-bottom: 20px; /* adjust the margin as needed */
+}
+
+body {
+  color: #696767; /* Set the text color to white */
+}
