@@ -36,10 +36,9 @@ const RegistrationForm = () => {
 
         console.log(`form data = ${JSON.stringify(formData)}`)
 
-        if (res.ok) {
-            // Notify users
-            //setNotify(`${formData.username} registered.  You will now need to log in.`);
-            console.log(`${formData.firstName} registered.  You will now need to log in.`)
+        if (res.ok) {           
+            console.log(await res.json());
+            console.log(`${formData.firstName} registered.  You will now need to log in.`)            
         } else {
             const err = await res.json();
             console.log(err)
