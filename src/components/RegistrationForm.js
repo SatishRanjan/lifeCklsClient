@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import "../styles/RegistrationForm.css"
 import logo from "../images/lifeCkls_Logo1.png"
+import { MessageArea } from "../common/uimessagearea.js";
+const config = require('../common/config.js');
+
 
 const RegistrationForm = () => {
     const [formData, setFormData] = useState({
@@ -23,9 +26,9 @@ const RegistrationForm = () => {
         console.log('Form submitted:', formData);
 
         // Replace the URL with your localhost API endpoint
-        const apiUrl = "http://localhost:8001/v1/user/register";
+        //const apiUrl = "http://localhost:8001/v1/user/register";
 
-        const res = await fetch(apiUrl, {
+        const res = await fetch(config.registrationUrl, {
             method: "PUT",
             body: JSON.stringify(formData), // Use formData instead of state
             //credentials: "include",
@@ -36,9 +39,13 @@ const RegistrationForm = () => {
 
         console.log(`form data = ${JSON.stringify(formData)}`)
 
-        if (res.ok) {           
+        if (res.ok) {
             console.log(await res.json());
-            console.log(`${formData.firstName} registered.  You will now need to log in.`)            
+            console.log(`${formData.firstName} registered.  You will now need to log in.`)
+            const messageElement = document.getElementById('server_msg');
+            messageElement.textContent = `User ${formData.userName} successfully Registered`
+            messageElement.style.color = 'green'
+            
         } else {
             const err = await res.json();
             console.log(err)
@@ -47,9 +54,25 @@ const RegistrationForm = () => {
     };
 
     return (
-        <div>            
+        <div>
             <form onSubmit={handleSubmit}>
                 <div>
+                    <label htmlFor="userName">User Name:</label>
+                    <input
+                        type="text"
+                        id="userName"
+                        value={formData.userName}
+                        onChange={handleChange}
+                    />
+
+                    <label htmlFor="password">Password:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={formData.password}
+                        onChange={handleChange}
+                    />
+
                     <label htmlFor="firstName">First Name:</label>
                     <input
                         type="text"
@@ -104,6 +127,14 @@ const RegistrationForm = () => {
                         type="text"
                         id="state"
                         value={formData.state}
+                        onChange={handleChange}
+                    />
+
+                    <label htmlFor="city">City:</label>
+                    <input
+                        type="text"
+                        id="city"
+                        value={formData.city}
                         onChange={handleChange}
                     />
 
