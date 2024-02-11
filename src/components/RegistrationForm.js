@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import "../styles/RegistrationForm.css"
-import logo from "../images/lifeCkls_Logo1.png"
 import { MessageArea } from "../common/uimessagearea.js";
 const config = require('../common/config.js');
 

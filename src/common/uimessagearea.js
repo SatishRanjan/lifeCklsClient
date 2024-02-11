@@ -1,6 +1,3 @@
-/* Copyright G. Hemingway, @2022 - All rights reserved */
-"use strict";
-
 import React from "react";
 import styled from "styled-components";
 
