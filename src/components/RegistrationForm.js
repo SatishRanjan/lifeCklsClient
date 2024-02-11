@@ -45,7 +45,7 @@ const RegistrationForm = () => {
             const messageElement = document.getElementById('server_msg');
             messageElement.textContent = `User ${formData.userName} successfully Registered`
             messageElement.style.color = 'green'
-            
+
         } else {
             const err = await res.json();
             console.log(err)
@@ -55,6 +55,8 @@ const RegistrationForm = () => {
 
     return (
         <div>
+            <MessageArea></MessageArea>
+            <h1 className="center-text">User Registration</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="userName">User Name:</label>
