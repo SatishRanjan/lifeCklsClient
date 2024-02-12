@@ -28,21 +28,15 @@ function App() {
           <Route path="/register" element={<RegistrationForm />} />
           <Route
             path="/login"
-            element={
-              isLoggedIn ? (
-                <Navigate to="/" />
-              ) : (
-                <LoginForm onLogin={handleLogin} />
-              )
-            }
+            element={<LoginForm onLogin={handleLogin} />}
           />
           <Route
             path="/"
             element={
               isLoggedIn ? (
-                <LifeCklsHomePage username={username} onLogout={handleLogout} />
+                <LifeCklsHomePage/>
               ) : (
-                <Navigate to="/login" />
+                <LoginForm onLogin={handleLogin} />
               )
             }
           />
