@@ -9,6 +9,7 @@ import logo from "./lifeCkls_Logo1.png";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   //const [username, setUsername] = useState('');
+  const [setUsername] = useState('');
 
   const handleLogin = (loggedInUsername) => {
     setIsLoggedIn(true);
