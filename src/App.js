@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegistrationForm from './components/RegistrationForm';
 import LifeCklsHomePage from './components/LifeCklsHomePage';
 import LoginForm from './components/LoginForm';
@@ -8,17 +8,17 @@ import logo from "./lifeCkls_Logo1.png";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
-  const [username, setUsername] = useState('');
+  //const [username, setUsername] = useState('');
 
   const handleLogin = (loggedInUsername) => {
     setIsLoggedIn(true);
     setUsername(loggedInUsername);
   };
 
-  const handleLogout = () => {
+  /*const handleLogout = () => {
     setIsLoggedIn(false);
     setUsername('');
-  };
+  };*/
 
   return (
     <BrowserRouter>
