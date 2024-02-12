@@ -59,4 +59,4 @@ jobs:
           app-name: 'lifeCkls'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_305CCF8B1C5C4C5584104702AD162C15 }}
-          package: .
+          package: build
