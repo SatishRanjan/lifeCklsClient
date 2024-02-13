@@ -1,22 +1,45 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { MessageArea } from "../common/uimessagearea.js";
+
+const config = require('../common/config.js');
 
 const LoginForm = ({ onLogin }) => {
+  let navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLoginFormSubmit = (e) => {
+  const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
-    
-    // Add your authentication logic here (e.g., send a request to a server)
+    const res = await fetch(config.loginUrl, {
+      method: "POST",
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+      //credentials: "include",
+      headers: {
+        "content-type": "application/json",
+      },
+    });
 
-    // For simplicity, let's consider the user as logged in if the username and password are not empty
-    if (username.trim() !== '' && password.trim() !== '') {
-      onLogin(username);
+    if (res.ok) {
+      console.log(await res.json());     
+      console.log(`${username} logged in successfully.`)
+      const messageElement = document.getElementById('server_msg');
+      messageElement.textContent = `User ${username} successfully loggedin`
+      messageElement.style.color = 'green'
+      navigate(`/`);
+    } else {
+      const err = await res.json();
+      console.log(err)
+      //setError(err.error);
     }
   };
 
   return (
     <div>
+       <MessageArea></MessageArea>
       <h2>Login</h2>
       <form onSubmit={handleLoginFormSubmit}>
         <label>

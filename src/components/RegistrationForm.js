@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import "../styles/RegistrationForm.css"
 import { MessageArea } from "../common/uimessagearea.js";
+import { useNavigate } from "react-router-dom";
 const config = require('../common/config.js');
 
 
 const RegistrationForm = () => {
+    let navigate = useNavigate();
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -44,7 +46,7 @@ const RegistrationForm = () => {
             const messageElement = document.getElementById('server_msg');
             messageElement.textContent = `User ${formData.userName} successfully Registered`
             messageElement.style.color = 'green'
-
+            navigate(`/login`);
         } else {
             const err = await res.json();
             console.log(err)
