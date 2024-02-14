@@ -8,7 +8,7 @@ const LoginForm = ({ onLogin }) => {
   let navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const LoginForm = ({ onLogin }) => {
     });
 
     if (res.ok) {
-      setIsLoggedIn(true);
+      //setIsLoggedIn(true);
       var user = await res.json()
       console.log(JSON.stringify(user)); 
       console.log(`${username} logged in successfully.`)
