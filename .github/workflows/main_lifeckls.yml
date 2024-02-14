@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'lifeCkls'
           slot-name: 'Production'
-          package: build
+          package: ./build
           
