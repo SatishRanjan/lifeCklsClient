@@ -5,6 +5,7 @@ import LifeCklsHomePage from './components/LifeCklsHomePage';
 import LoginForm from './components/LoginForm';
 import "./App.css";
 import logo from "./lifeCkls_Logo1.png";
+import Header from './components/Header';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -24,6 +25,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
+        <Header />
         <img src={logo} alt="Logo" className="logo" />
         <Routes>
           <Route path="/register" element={<RegistrationForm />} />

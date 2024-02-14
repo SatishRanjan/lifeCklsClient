@@ -8,6 +8,7 @@ const LoginForm = ({ onLogin }) => {
   let navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLoginFormSubmit = async (e) => {
     e.preventDefault();
@@ -24,23 +25,26 @@ const LoginForm = ({ onLogin }) => {
     });
 
     if (res.ok) {
-      console.log(await res.json());     
+      setIsLoggedIn(true);
+      var user = await res.json()
+      console.log(JSON.stringify(user)); 
       console.log(`${username} logged in successfully.`)
       const messageElement = document.getElementById('server_msg');
       messageElement.textContent = `User ${username} successfully loggedin`
       messageElement.style.color = 'green'
+      localStorage.setItem("user", JSON.stringify(user));
       navigate(`/`);
-    } else {
-      const err = await res.json();
-      console.log(err)
-      //setError(err.error);
+    } else {      
+      const messageElement = document.getElementById('server_msg');
+      messageElement.textContent = await res.text()
+      messageElement.style.color = 'red'
     }
   };
 
   return (
     <div>
-       <MessageArea></MessageArea>
-      <h2>Login</h2>
+      <MessageArea></MessageArea>
+      <h1 className="center-text">Login</h1>
       <form onSubmit={handleLoginFormSubmit}>
         <label>
           Username:

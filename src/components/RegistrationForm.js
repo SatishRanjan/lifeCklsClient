@@ -48,8 +48,11 @@ const RegistrationForm = () => {
             messageElement.style.color = 'green'
             navigate(`/login`);
         } else {
-            const err = await res.json();
+            const err =  await res.text()
             console.log(err)
+            const messageElement = document.getElementById('server_msg');
+            messageElement.textContent = err
+            messageElement.style.color = 'red'
             //setError(err.error);
         }
     };

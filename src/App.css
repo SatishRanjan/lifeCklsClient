@@ -12,3 +12,16 @@
 body {
   color: #696767; /* Set the text color to white */
 }
+
+.header {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+  background-color: #eee; /* Add your desired background color */
+}
+
+.auth-links {
+  display: flex;
+  align-items: center;
+}
