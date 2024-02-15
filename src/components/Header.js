@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import "../App.css";
 import { useNavigate } from "react-router-dom";
 
-const Header = ({logOut}) => {
+const Header = ({ logOut }) => {
   console.log("header loaded")
   let navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-  const handleLogin = () => {   
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleLogin = () => {
     navigate(`/login`);
   };
 
@@ -36,7 +36,7 @@ const Header = ({logOut}) => {
   };
 
   return (
-    <div className="header">
+    <div className="header">     
       <div className="auth-links">
         {localStorage.getItem("user") ? (
           <button onClick={handleLogout}>Logout</button>
@@ -46,7 +46,7 @@ const Header = ({logOut}) => {
       </div>
       <div className="auth-links">
         {localStorage.getItem("user") ? (
-          <button onClick={handleHome}>Home</button>
+          <button style={hideButtonStyle} />
         ) : (
           <button onClick={handleReister}>Register</button>
         )}
@@ -57,6 +57,9 @@ const Header = ({logOut}) => {
         ) : (
           <button style={hideButtonStyle}>Profile</button>
         )}
+      </div>
+      <div className="auth-links">
+        <button onClick={handleHome}>Home</button>
       </div>
     </div>
   );
