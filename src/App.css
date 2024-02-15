@@ -24,4 +24,11 @@ body {
 .auth-links {
   display: flex;
   align-items: center;
+  margin-right: 10px;
+}
+
+.register-links {
+  text-align: left;
+  align-items: left;
+  margin-right: 10px;
 }

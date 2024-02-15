@@ -4,7 +4,7 @@ import { MessageArea } from "../common/uimessagearea.js";
 
 const config = require('../common/config.js');
 
-const LoginForm = ({ onLogin }) => {
+const LoginForm = ({ logIn }) => {
   let navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -27,14 +27,11 @@ const LoginForm = ({ onLogin }) => {
     if (res.ok) {
       //setIsLoggedIn(true);
       var user = await res.json()
-      console.log(JSON.stringify(user)); 
+      logIn(user)
+      console.log(JSON.stringify(user));
       console.log(`${username} logged in successfully.`)
-      const messageElement = document.getElementById('server_msg');
-      messageElement.textContent = `User ${username} successfully loggedin`
-      messageElement.style.color = 'green'
-      localStorage.setItem("user", JSON.stringify(user));
-      navigate(`/`);
-    } else {      
+      navigate(`/profile`);
+    } else {
       const messageElement = document.getElementById('server_msg');
       messageElement.textContent = await res.text()
       messageElement.style.color = 'red'
@@ -56,7 +53,9 @@ const LoginForm = ({ onLogin }) => {
           <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button type="submit">Register</button>
+        </div>
       </form>
     </div>
   );

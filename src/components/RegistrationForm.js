@@ -48,7 +48,7 @@ const RegistrationForm = () => {
             messageElement.style.color = 'green'
             navigate(`/login`);
         } else {
-            const err =  await res.text()
+            const err = await res.text()
             console.log(err)
             const messageElement = document.getElementById('server_msg');
             messageElement.textContent = err
@@ -153,7 +153,9 @@ const RegistrationForm = () => {
                     />
                 </div>
 
-                <button type="submit">Register</button>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <button type="submit">Register</button>
+                </div>
 
             </form>
         </div>
