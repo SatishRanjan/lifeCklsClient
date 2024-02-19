@@ -54,7 +54,7 @@ const LoginForm = ({ logIn }) => {
         </label>
         <br />
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <button type="submit">Register</button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>
