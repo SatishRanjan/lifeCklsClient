@@ -2,7 +2,7 @@ import React from 'react';
 // JSON.parse(localStorage.getItem("user"))["UserName"]
 
 const ProfilePage = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+    //const user = JSON.parse(localStorage.getItem("user"));
 
     // Set the desired color for the username
     const usernameStyle = {

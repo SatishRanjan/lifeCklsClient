@@ -7,17 +7,17 @@ import ProfilePage from './components/Profile';
 import "./App.css";
 import logo from "./lifeCkls_Logo1.png";
 import Header from './components/Header';
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   //const [username, setUsername] = useState('');
   const [setUsername] = useState('');
 
-  const handleLogin = (loggedInUsername) => {
+  /*const handleLogin = (loggedInUsername) => {
     setIsLoggedIn(true);
     setUsername(loggedInUsername);
-  };
+  };*/
 
   const loggedIn = () => {
     //return state.username && state.primary_email;
