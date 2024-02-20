@@ -10,9 +10,9 @@ import Header from './components/Header';
 //import { useNavigate } from "react-router-dom";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);
   //const [username, setUsername] = useState('');
-  const [setUsername] = useState('');
+  //const [setUsername] = useState('');
 
   /*const handleLogin = (loggedInUsername) => {
     setIsLoggedIn(true);

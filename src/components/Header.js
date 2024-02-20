@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const Header = ({ logOut }) => {
   console.log("header loaded")
   let navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const [isLoggedIn, setIsLoggedIn] = useState(false);  
   const handleLogin = () => {
     navigate(`/login`);
   };
@@ -22,7 +22,7 @@ const Header = ({ logOut }) => {
   const handleLogout = () => {
     // Perform the logout logic here
     logOut();
-    setIsLoggedIn(false);
+    //setIsLoggedIn(false);
   };
 
   const handleHome = () => {
