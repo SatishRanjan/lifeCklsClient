@@ -62,6 +62,7 @@ const Header = ({ logOut }) => {
       <div className="auth-links">
         <button onClick={handleHome}>Home</button>
       </div>
+      <p>v1.0.0</p>
     </div>
   );
 };
