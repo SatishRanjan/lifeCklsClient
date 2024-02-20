@@ -28,14 +28,14 @@ function App() {
     console.log("User logged in")
     console.log(JSON.stringify(user))
     localStorage.setItem("user", JSON.stringify(user));
-    setIsLoggedIn(true);
+    //setIsLoggedIn(true);
   };
 
   // Helper for when a user logs out
   const logOut = () => {
     // Wipe localStorage
     localStorage.removeItem("user");
-    setIsLoggedIn(false);
+    //setIsLoggedIn(false);
     window.location.href = "/";
   };
 
