@@ -3,16 +3,16 @@
   }
   
   .left-pane {
-    flex: .2;
+    flex: .1;
     padding: 20px;
-    background-color: #cfecfa;
+    background-color: #8D918D;
   }
 
   .tile {
     margin-bottom: 20px;
     padding: 10px;
     border: 1px solid #5075c788;
-    background-color: #8bf7bb;
+    background-color: #f0fff0e0;
   }
   
   
