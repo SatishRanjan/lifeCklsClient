@@ -14,31 +14,38 @@ import ConnectionRequests from './ConnectionRequests';
 import "../Profile.css"
 
 const LeftPane = () => {
+
+    const linkStyle = {
+        textDecoration: 'none', // Remove underline
+        color: '#52595D',       // Inherit the color from the parent (you can customize this)
+        cursor: 'pointer'       // Add a pointer cursor for better UX
+      };
+
     return (
         <div className="left-pane">
             <div className="tile">
-                <Link to="/editprofile"><b>Edit Profile</b></Link>
+                <Link to="/editprofile" style={linkStyle}><b>Edit Profile</b></Link>
             </div>
             <div className="tile">
-                <Link to="/connect"><b>Connect</b></Link>
+                <Link to="/connect" style={linkStyle}><b>Connect</b></Link>
             </div>
             <div className="tile">
-                <Link to="/createstory"><b>Create Story</b></Link>
+                <Link to="/createstory" style={linkStyle}><b>Create Story</b></Link>
             </div>
             <div className="tile">
-                <Link to="/sendmessage"><b>Send Message</b></Link>
+                <Link to="/sendmessage" style={linkStyle}><b>Send Message</b></Link>
             </div>
             <div className="tile">
-                <Link to="/connections"><b>Connections</b></Link>
+                <Link to="/connections" style={linkStyle}><b>Connections</b></Link>
             </div>
             <div className="tile">
-                <Link to="/stories"><b>Stories</b></Link>
+                <Link to="/stories" style={linkStyle}><b>Stories</b></Link>
             </div>
             <div className="tile">
-                <Link to="/messages"><b>Messages</b></Link>
+                <Link to="/messages" style={linkStyle}><b>Messages</b></Link>
             </div>
             <div className="tile">
-                <Link to="/connectionrequests"><b>Connection Requests</b></Link>
+                <Link to="/connectionrequests" style={linkStyle}><b>Connection Requests</b></Link>
             </div>
         </div>
     );

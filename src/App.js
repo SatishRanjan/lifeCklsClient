@@ -59,14 +59,14 @@ function App() {
               )
             }
           />
-          <Route path="/editprofile" element={<ProfilePage showProfile={true} />} />
-          <Route path="/connect" element={<ProfilePage showConnect={true} />} />
-          <Route path="/createstory" element={<ProfilePage showCreateStory={true} />} />
-          <Route path="/sendmessage" element={<ProfilePage showSendMessage={true} />} />
-          <Route path="/connections" element={<ProfilePage showConnections={true} />} />
-          <Route path="/stories" element={<ProfilePage showStories={true} />} />
-          <Route path="/messages" element={<ProfilePage showMessages={true} />} />
-          <Route path="/connectionrequests" element={<ProfilePage showConnectionRequests={true} />} />
+          <Route path="/editprofile" element={user ? (<ProfilePage showProfile={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/connect" element={user ? (<ProfilePage showConnect={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/createstory" element={user ? (<ProfilePage showCreateStory={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/sendmessage" element={user ? (<ProfilePage showSendMessage={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/connections" element={user ? (<ProfilePage showConnections={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/stories" element={user ? (<ProfilePage showStories={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/messages" element={user ? (<ProfilePage showMessages={true} />) : (<LoginForm logIn={logIn} />)} />
+          <Route path="/connectionrequests" element={user ? (<ProfilePage showConnectionRequests={true} />) : (<LoginForm logIn={logIn} />)} />
           {/* Add other routes as needed */}
         </Routes>
       </div>
