@@ -7,14 +7,6 @@ import ProfilePage from './components/Profile';
 import "./App.css";
 import logo from "./lifeCkls_Logo1.png";
 import Header from './components/Header';
-import EditProfile from './components/EditProfile';
-import Connect from './components/Connect';
-import CreateStory from './components/CreateStory';
-import SendMessage from './components/SendMessage';
-import Connections from './components/Connections';
-import Stories from './components/Stories';
-import Messages from './components/Messages';
-import ConnectionRequests from './components/ConnectionRequests';
 
 function App() {
   const [user, setData] = useState(localStorage.getItem('user') || null);
@@ -67,14 +59,14 @@ function App() {
               )
             }
           />
-          <Route path="/editprofile" component={EditProfile} />
-          <Route path="/connect" component={Connect} />
-          <Route path="/createstory" component={CreateStory} />
-          <Route path="/sendmessage" component={SendMessage} />
-          <Route path="/connections" component={Connections} />
-          <Route path="/stories" component={Stories} />
-          <Route path="/messages" component={Messages} />
-          <Route path="/connectionrequests" component={ConnectionRequests} />
+          <Route path="/editprofile" element={<ProfilePage showProfile={true} />} />
+          <Route path="/connect" element={<ProfilePage showConnect={true} />} />
+          <Route path="/createstory" element={<ProfilePage showCreateStory={true} />} />
+          <Route path="/sendmessage" element={<ProfilePage showSendMessage={true} />} />
+          <Route path="/connections" element={<ProfilePage showConnections={true} />} />
+          <Route path="/stories" element={<ProfilePage showStories={true} />} />
+          <Route path="/messages" element={<ProfilePage showMessages={true} />} />
+          <Route path="/connectionrequests" element={<ProfilePage showConnectionRequests={true} />} />
           {/* Add other routes as needed */}
         </Routes>
       </div>

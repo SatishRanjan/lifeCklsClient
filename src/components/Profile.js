@@ -1,6 +1,14 @@
 import React from 'react';
 //import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import EditProfile from './EditProfile';
+import Connect from './Connect';
+import CreateStory from './CreateStory';
+import SendMessage from './SendMessage';
+import Connections from './Connections';
+import Stories from './Stories';
+import Messages from './Messages';
+import ConnectionRequests from './ConnectionRequests';
 
 // JSON.parse(localStorage.getItem("user"))["UserName"]
 import "../Profile.css"
@@ -36,19 +44,14 @@ const LeftPane = () => {
     );
 };
 
-const RightPane = () => {
-    return (
-        <div className="right-pane">           
-        </div>
-    );
-};
 
-const ProfilePage = () => {
-    const user = JSON.parse(localStorage.getItem("user"));
+const ProfilePage = (props) => {
+    const user = JSON.parse(localStorage.getItem("user"));   
     /*const [username, setUsername] = useState('');
     const handleSubmit = async (e) => {
         e.preventDefault();
     };*/
+   
 
     // Set the desired color for the username
     const usernameStyle = {
@@ -60,7 +63,16 @@ const ProfilePage = () => {
             <h1 className="center-text">Welcome <span style={usernameStyle}>"{user["userName"]}"</span> to your profile page, this page is still work in progress!</h1>
             <div className="page-container">
                 <LeftPane />
-                <RightPane />
+                <div className="right-pane">
+                    {props.showProfile && <EditProfile />}
+                    {props.showConnect && <Connect />}
+                    {props.showCreateStory && <CreateStory />}
+                    {props.showSendMessage && <SendMessage />}
+                    {props.showConnections && <Connections />}
+                    {props.showStories && <Stories />}
+                    {props.showMessages && <Messages />}
+                    {props.showConnectionRequests && <ConnectionRequests />}
+                </div>
 
                 {/*<div>
                 <div>

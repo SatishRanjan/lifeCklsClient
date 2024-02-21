@@ -9,7 +9,7 @@ const CenteredDiv = styled.div`
 const SendMessage = () => {
   return (
     <CenteredDiv>
-      <h1 className="center-text">Development in progress!</h1>    
+      <p className="center-text">SendMessage Development in progress!</p>    
     </CenteredDiv>
   );
 };
