@@ -1,5 +1,4 @@
-//import React, { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RegistrationForm from './components/RegistrationForm';
 import LifeCklsHomePage from './components/LifeCklsHomePage';
@@ -8,19 +7,13 @@ import ProfilePage from './components/Profile';
 import "./App.css";
 import logo from "./lifeCkls_Logo1.png";
 import Header from './components/Header';
-//import { useNavigate } from "react-router-dom";
 
 function App() {
-  //const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setData] = useState(localStorage.getItem('user') || null);
   //const [username, setUsername] = useState('');
   //const [setUsername] = useState('');
 
-  /*const handleLogin = (loggedInUsername) => {
-    setIsLoggedIn(true);
-    setUsername(loggedInUsername);
-  };*/
-
-  const loggedIn = () => {
+ const loggedIn = () => {
     //return state.username && state.primary_email;
   };
 
@@ -28,18 +21,16 @@ function App() {
   const logIn = async (user) => {
     console.log("User logged in")
     console.log(JSON.stringify(user))
+    setData(JSON.stringify(user));
     localStorage.setItem("user", JSON.stringify(user));
-    //setIsLoggedIn(true);
   };
 
   // Helper for when a user logs out
   const logOut = () => {
-    // Wipe localStorage
-    localStorage.removeItem("user");
-    //setIsLoggedIn(false);
+    // Wipe out localStorage
+    localStorage.removeItem("user");    
     window.location.href = "/";
   };
-
 
   return (
     <BrowserRouter>
@@ -61,7 +52,7 @@ function App() {
           <Route
             path="/profile"
             element={
-              localStorage.getItem("user") ? (
+              user ? (
                 <ProfilePage />
               ) : (
                 <LoginForm logIn={logIn} />
