@@ -19,46 +19,62 @@ const LeftPane = () => {
         textDecoration: 'none', // Remove underline
         color: '#52595D',       // Inherit the color from the parent (you can customize this)
         cursor: 'pointer'       // Add a pointer cursor for better UX
-      };
+    };
 
     return (
         <div className="left-pane">
-            <div className="tile">
-                <Link to="/editprofile" style={linkStyle}><b>Edit Profile</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/connect" style={linkStyle}><b>Connect</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/createstory" style={linkStyle}><b>Create Story</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/sendmessage" style={linkStyle}><b>Send Message</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/connections" style={linkStyle}><b>Connections</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/stories" style={linkStyle}><b>Stories</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/messages" style={linkStyle}><b>Messages</b></Link>
-            </div>
-            <div className="tile">
-                <Link to="/connectionrequests" style={linkStyle}><b>Connection Requests</b></Link>
-            </div>
+            <Link to="/editprofile" style={linkStyle}>
+                <div className="tile">
+                    <b>Edit Profile</b>
+                </div>
+            </Link>
+            <Link to="/connect" style={linkStyle}>
+                <div className="tile">
+                    <b>Connect</b>
+                </div>
+            </Link>
+            <Link to="/createstory" style={linkStyle}>
+                <div className="tile">
+                    <b>Create Story</b>
+                </div>
+            </Link>
+            <Link to="/sendmessage" style={linkStyle}>
+                <div className="tile">
+                    <b>Send Message</b>
+                </div>
+            </Link>
+            <Link to="/connections" style={linkStyle}>
+                <div className="tile">
+                    <b>Connections</b>
+                </div>
+            </Link>
+            <Link to="/stories" style={linkStyle}>
+                <div className="tile">
+                    <b>Stories</b>
+                </div>
+            </Link>
+            <Link to="/messages" style={linkStyle}>
+                <div className="tile">
+                    <b>Messages</b>
+                </div>
+            </Link>
+            <Link to="/connectionrequests" style={linkStyle}>
+                <div className="tile">
+                    <b>Connection Requests</b>
+                </div>
+            </Link>
         </div>
     );
 };
 
 
 const ProfilePage = (props) => {
-    const user = JSON.parse(localStorage.getItem("user"));   
+    const user = JSON.parse(localStorage.getItem("user"));
     /*const [username, setUsername] = useState('');
     const handleSubmit = async (e) => {
         e.preventDefault();
     };*/
-   
+
 
     // Set the desired color for the username
     const usernameStyle = {
