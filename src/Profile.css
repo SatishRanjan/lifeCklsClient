@@ -1,0 +1,23 @@
+.page-container {
+    display: flex;
+  }
+  
+  .left-pane {
+    flex: .2;
+    padding: 20px;
+    background-color: #cfecfa;
+  }
+
+  .tile {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #5075c788;
+    background-color: #8bf7bb;
+  }
+  
+  
+  .right-pane {
+    flex: 1;
+    padding: 20px;
+    background-color: #e0e0e0;
+  }

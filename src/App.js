@@ -7,13 +7,21 @@ import ProfilePage from './components/Profile';
 import "./App.css";
 import logo from "./lifeCkls_Logo1.png";
 import Header from './components/Header';
+import EditProfile from './components/EditProfile';
+import Connect from './components/Connect';
+import CreateStory from './components/CreateStory';
+import SendMessage from './components/SendMessage';
+import Connections from './components/Connections';
+import Stories from './components/Stories';
+import Messages from './components/Messages';
+import ConnectionRequests from './components/ConnectionRequests';
 
 function App() {
   const [user, setData] = useState(localStorage.getItem('user') || null);
   //const [username, setUsername] = useState('');
   //const [setUsername] = useState('');
 
- const loggedIn = () => {
+  const loggedIn = () => {
     //return state.username && state.primary_email;
   };
 
@@ -28,7 +36,7 @@ function App() {
   // Helper for when a user logs out
   const logOut = () => {
     // Wipe out localStorage
-    localStorage.removeItem("user");    
+    localStorage.removeItem("user");
     window.location.href = "/";
   };
 
@@ -59,6 +67,14 @@ function App() {
               )
             }
           />
+          <Route path="/editprofile" component={EditProfile} />
+          <Route path="/connect" component={Connect} />
+          <Route path="/createstory" component={CreateStory} />
+          <Route path="/sendmessage" component={SendMessage} />
+          <Route path="/connections" component={Connections} />
+          <Route path="/stories" component={Stories} />
+          <Route path="/messages" component={Messages} />
+          <Route path="/connectionrequests" component={ConnectionRequests} />
           {/* Add other routes as needed */}
         </Routes>
       </div>
