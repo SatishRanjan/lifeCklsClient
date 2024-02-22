@@ -33,7 +33,7 @@ const Connect = () => {
             if (messageElement) {
                 messageElement.style.display = 'none';
             }
-        } else if (res.status == 404) {
+        } else if (res.status === 404) {
             setUserData(null);
             const messageElement = document.getElementById('server_msg');
             if (messageElement) {
