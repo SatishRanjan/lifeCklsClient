@@ -30,7 +30,7 @@ const LeftPane = () => {
             </Link>
             <Link to="/connect" style={linkStyle}>
                 <div className="tile">
-                    <b>Connect</b>
+                    <b>Search & Connect</b>
                 </div>
             </Link>
             <Link to="/createstory" style={linkStyle}>

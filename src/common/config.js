@@ -5,4 +5,5 @@ const apiRoot = "https://lifecklsservice.azurewebsites.net"
 module.exports = {
     registrationUrl: `${apiRoot}/v1/user/register`,
     loginUrl: `${apiRoot}/v1/user/login`,
+    getUserByName: `${apiRoot}/v1/user/`
 };

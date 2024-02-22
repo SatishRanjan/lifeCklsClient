@@ -1,0 +1,22 @@
+#userTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#userTable td {
+  border: 1px solid #c9c5c5;
+  background-color: #f2f2f2;
+  padding: 8px;
+  text-align: left;
+}
+
+#userTable th {
+  background-color:#BCC6CC;
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+
+.connect-button {
+    background-color: #566D7E;
+    color: white;
+  }
