@@ -37,7 +37,8 @@ const Header = ({ logOut }) => {
   };
 
   return (
-    <div className="header">     
+    <div className="header">
+      <label className="version-label"><b>v1.0.0</b></label>
       <div className="auth-links">
         {localStorage.getItem("user") ? (
           <button onClick={handleLogout}>Logout</button>
@@ -62,7 +63,6 @@ const Header = ({ logOut }) => {
       <div className="auth-links">
         <button onClick={handleHome}>Home</button>
       </div>
-      <label><b>v1.0.0</b></label>
     </div>
   );
 };

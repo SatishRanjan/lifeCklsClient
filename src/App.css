@@ -32,3 +32,7 @@ body {
   align-items: left;
   margin-right: 10px;
 }
+
+.version-label {
+  margin-right: auto; /* This will push the version label to the left */
+}
