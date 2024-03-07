@@ -1,23 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef} from 'react';
+//import styled from 'styled-components';
 import '../UserInfo.css'
 
 const config = require('../common/config.js');
 
-const CenteredDiv = styled.div`
+/*const CenteredDiv = styled.div`
   text-align: center;
   font-size: 2em;
-`;
+`;*/
 
 const ConnectionRequests = () => {
   const [connectionRequests, setConnectionRequests] = useState([]);
-  const loggedInUser = JSON.parse(localStorage.getItem("user"));
-
   useEffect(() => {
     const fetchData = async () => {
       try {
 
-        var url = config.connectionRequestsUrl.replace("{username}", loggedInUser["userName"]);
+        var url = config.connectionRequestsUrl.replace("{username}", (JSON.parse(localStorage.getItem("user")))["userName"]);
         console.log("connectionrequests url=" + url)
         const response = await fetch(url);
 
@@ -42,8 +40,7 @@ const ConnectionRequests = () => {
     // You can perform additional actions, such as making an API request or updating state.
 };
 
-  return (
-    
+  return (    
       <div>
         <h2>Connection Requests</h2>
         <table id="userTable">
@@ -66,8 +63,7 @@ const ConnectionRequests = () => {
             ))}
           </tbody>
         </table>
-      </div>
-   
+      </div>   
   );
 };
 
