@@ -20,3 +20,13 @@
     background-color: #566D7E;
     color: white;
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .connect-button:disabled {
+    /* Grey out the disabled buttons */
+    opacity: 0.5; /* Adjust opacity as needed */
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+  }
