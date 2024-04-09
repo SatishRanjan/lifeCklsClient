@@ -4,12 +4,6 @@ import '../stories.css';
 
 const config = require('../common/config.js');
 
-const CenteredDiv = styled.div`
-  text-align: center;
-  font-size: 2em;
-`;
-
-
 const Stories = () => {
   const [stories, setStories] = useState([]);
 
