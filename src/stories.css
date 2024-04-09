@@ -1,0 +1,15 @@
+.stories-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .stories-table th, .stories-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  .stories-table th {
+    background-color: #f2f2f2;
+  }
+  

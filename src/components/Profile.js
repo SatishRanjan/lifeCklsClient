@@ -83,7 +83,7 @@ const ProfilePage = (props) => {
 
     return (
         <div>
-            <h1 className="center-text">Welcome <span style={usernameStyle}>"{user["userName"]}"</span> to your profile page, this page is still work in progress!</h1>
+            <h1 className="center-text">Welcome <span style={usernameStyle}>"{user["userName"]}"</span> to your profile page!</h1>
             <div className="page-container">
                 <LeftPane />
                 <div className="right-pane">
