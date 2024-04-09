@@ -38,7 +38,7 @@ const Header = ({ logOut }) => {
 
   return (
     <div className="header">
-      <label className="version-label"><b>v1.0.1</b></label>
+      <label className="version-label"><b>v1.0.5</b></label>
       <div className="auth-links">
         {localStorage.getItem("user") ? (
           <button onClick={handleLogout}>Logout</button>
