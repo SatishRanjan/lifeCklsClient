@@ -12,6 +12,7 @@ const Stories = () => {
         var url = config.getStoriesUrl.replace("{username}", (JSON.parse(localStorage.getItem("user")))["userName"]);
         const response = await fetch(url);
         const responseData = await response.json();
+        console.log("stories=" + JSON.stringify(responseData))
         setStories(responseData);
       } catch (error) {
         console.error('Error fetching stories:', error);
@@ -30,6 +31,7 @@ const Stories = () => {
             <th>Story</th>
             <th>When</th>
             <th>Where</th>
+            <th>Participants</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +40,14 @@ const Stories = () => {
               <td>{story.content}</td>
               <td>{new Date(story.when).toLocaleString()}</td>
               <td>{story.where}</td>
+              <td>
+                {story.participants ? story.participants.map((participant, index) => {
+                  const [firstName, lastName] = participant.split(' ');
+                  return (
+                    <span key={index}>{firstName} {lastName}{index !== story.participants.length - 1 && ', '}</span>
+                  );
+                }) : ''}
+              </td>
             </tr>
           ))}
         </tbody>

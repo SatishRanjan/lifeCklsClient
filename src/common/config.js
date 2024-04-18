@@ -1,6 +1,6 @@
 // Replace the URL with your localhost API endpoint
-const apiRoot = "http://localhost:5079"
-//const apiRoot = "https://lifecklsservice.azurewebsites.net"
+// const apiRoot = "http://localhost:5079"
+const apiRoot = "https://lifecklsservice.azurewebsites.net"
 
 module.exports = {
     registrationUrl: `${apiRoot}/v1/user/register`,
@@ -12,4 +12,5 @@ module.exports = {
     connectionsUrl: `${apiRoot}/v1/user/{username}/connections`,
     createStoryUrl: `${apiRoot}/v1/user/createstory`,
     getStoriesUrl: `${apiRoot}/v1/user/{username}/stories`,
+    storyParticipationUrl: `${apiRoot}/v1/story/handlestoryparticipation`,
 };
